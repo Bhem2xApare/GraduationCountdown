@@ -19,8 +19,9 @@ body {
 p {
   background-color:;
   text-align: center;
-  font-size: 130px;
-  margin-bottom: 5px;
+  font-size: 150px;
+  margin-bottom: 20px;
+  font-weight: bolder;
 
 }
 
@@ -33,6 +34,24 @@ p {
        width: 100%;
 }
 
+.glow {
+        font-size: 190px;
+        color: #d9f010;
+        text-align: center;
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+      @-webkit-keyframes glow {
+        from {
+          text-shadow: 0 0 10px #eeeeee, 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000, 
+                       0 0 50px #9554b3, 0 0 60px #9554b3, 0 0 70px #9554b3;
+        }
+        to {
+          text-shadow: 0 0 20px #eeeeee, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6,
+                       0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+        }
+        
 </style>
 </head>
 <body>
@@ -42,11 +61,15 @@ p {
 <h1 style="background-color:orange;"> Graduation Day Countdown</h1>
 
 <div>
-    <p id="demo"></p>
+    <p class="glow" id="demo"></p>
+    <br>
+    <br>
+    <br>
+    <p class="glow" style="font-size: 100px;">👨‍🎓👏🥇🥇🏆👨‍🎓😇</p>
 </div>
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Apr 25, 2021 00:00:00").getTime();
+var countDownDate = new Date("Apr 26, 2021 12:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -64,9 +87,7 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
   // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-    
+  document.getElementById("demo").innerHTML = days + "Days";
   // If the count down is over, write some text 
   if (distance < 0) {
     clearInterval(x);
